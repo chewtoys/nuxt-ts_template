@@ -1,5 +1,3 @@
-
-
 {
   "extends": "@nuxt/typescript",
   "target": "es5",
@@ -19,5 +17,8 @@
   "strictNullChecks": true,
   "removeComments": true,
   "noImplicitAny": true,
-  "allowJs": true
+  "allowJs": true,
+  "vue-property-decorator": [
+    "/node_modules/vue-class-component/lib/vue-property-decorator"
+  ]
 }

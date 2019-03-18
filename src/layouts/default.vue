@@ -1,8 +1,23 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template lang="pug">
+  div
+    the-header
+    div
+      nuxt
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import TheHeader from '~/components/TheHeader.vue'
+
+@Component({
+  components: {
+    TheHeader
+  }
+})
+export default class Default extends Vue {}
+</script>
+
 
 <style>
 html {
