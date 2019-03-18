@@ -1,0 +1,23 @@
+
+
+{
+  "extends": "@nuxt/typescript",
+  "target": "es5",
+  "module": "esnext",
+  "moduleResolution": "node",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@nuxt/vue-app/types",
+    ],
+    "experimentalDecorators": true
+  },
+  "strictNullChecks": true,
+  "removeComments": true,
+  "noImplicitAny": true,
+  "allowJs": true
+}

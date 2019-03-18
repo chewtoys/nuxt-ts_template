@@ -1,0 +1,33 @@
+version: "3.3"
+
+services:
+  web:
+    build:
+      context: .
+    command: npm run dev
+    tty: true
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - API_HOST=http://localhost:8080
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB_NAME=morgan_development
+
+  db:
+    image: mdillon/postgis:latest
+    volumes:
+      - pgsql-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+
+volumes:
+  pgsql-data:
